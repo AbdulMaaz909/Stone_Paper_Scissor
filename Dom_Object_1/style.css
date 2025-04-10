@@ -1,0 +1,34 @@
+.container{
+    display: flex;
+    /* justify-content: space-between; */
+
+    /* width: 100px; */
+
+    
+}
+.box {
+    height: 200px;
+    width: 100px;
+    margin: 5px;
+    border: 1px solid black;
+    background: bisque;
+    text-align: center;
+}
+
+.box1{
+    height: 100px;
+    width: 100px;
+    margin-left :2rem;
+    /* margin-top: 1rem; */
+    border: 1rem solid black;
+    background: darkcyan;
+}
+
+/* button{
+    background-color: red;
+    color: white;
+} */
+
+.content{
+    color: red;
+}
