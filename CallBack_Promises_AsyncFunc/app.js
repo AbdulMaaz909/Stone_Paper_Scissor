@@ -185,32 +185,178 @@
 // }
 
 
-function getData(dataId){
-    return new Promise((resolve,reject) =>{
-        setTimeout(()=>{
-            console.log("data",dataId);
-            resolve("sucess");
-    },2000);
+// function getData(dataId){
+//     return new Promise((resolve,reject) =>{
+//         setTimeout(()=>{
+//             console.log("data",dataId);
+//             resolve("sucess");
+//     },2000);
+// });
+// }
+
+// async function getAllDAta(){
+//     console.log("Fetching data1...");    
+//     await getData(1);
+//     console.log("Fetching data2...");
+//     await getData(2);
+//     console.log("Fetching data3...");
+//     await getData(3);
+// }
+
+// //IIFE :Immediately Invoked Function Experation .. we can use IIFE only one time.
+// //IIFE is a funtion that is called immediately as soon as it is defined.
+
+// (async function (){
+//     console.log("Fetching data1...");    
+//     await getData(1);
+//     console.log("Fetching data2...");
+//     await getData(2);
+//     console.log("Fetching data3...");
+//     await getData(3);
+// })();
+
+
+
+//Q1. write a function greatuser that take a name and a callback the call back should primt a message.
+
+// function greetUser(name, callback){
+//     console.log("hey how are you");
+    
+// }
+
+// greetUser("Maaz",function(message){
+//     console.log(message);
+    
+// });
+
+
+//Q2.Create a function sum (a,b,callback) that calculates the sum of 2 numbers and passes the result to the callbacks.
+// const sum = (a,b,callback) =>{
+//     const  result= a+b;
+//     callback(result);
+    
+// };
+
+// sum(5,5, (result)=>{
+//     console.log("the sum of a and b is " , result );
+    
+// });
+
+//Q3.Simulate 3 tasks that happen one after the other using setTimeout and nested callbacks:
+//"Fetching user..."
+//"Getting user data..."
+//"Displaying data..."
+
+// function  dispaly(fetchdata){
+//     setTimeout (()=>{
+//         console.log("fetching data...");
+//         fetchdata();
+//     },2000)
+// }
+
+// function  dis_data(getdata){
+//     setTimeout (()=>{
+//         console.log("getting user data...");
+//         getdata();
+//     },2000)
+// }
+
+// function  data_dispaly(displaydata){
+//     setTimeout (()=>{
+//         console.log("displaying  data...");
+//         displaydata();
+//     },2000)
+// }
+
+// dispaly(()=>{
+//     dis_data(()=>{
+//         data_dispaly();
+//     });
+// });
+
+//Q4. Convert your answer to Q3 into Promises instead of callbacks.
+// function fetchdata(){
+//     return new Promise((resolve)=>{
+//         setTimeout(() => {
+//             console.log("fetchingdata..");
+//             resolve();
+            
+//         }, 2000);
+//     });
+// }
+// function data(){
+//     return new Promise((resolve)=>{
+//         setTimeout(() => {
+//             console.log("displayingdata..");
+//             resolve();   
+//         }, 2000);
+//     });
+// }
+
+// function getdata(){
+//     return new Promise((resolve)=>{
+//         setTimeout(() => {
+//             console.log("gettingdata..");
+//             resolve();     
+//         }, 2000);
+//     });
+// }
+// fetchdata()
+// .then(data)
+// .then(getdata);
+
+//Q5. Write a function fetchData that simulates a delay of 2 seconds using setTimeout and returns "Data loaded".
+// async function fetchData(){
+//     await new Promise((resolve)=>{
+//         setTimeout(()=>{
+//             console.log("this wait for two seconds");
+//             resolve();
+//         },2000)
+//     });
+//     return "loaded data"
+// }
+
+// fetchData().then((result)=>{
+//     console.log(result);
+    
+// });
+
+//Write an async function delayedGreeting(name) that: 1.Waits for 1 second, 2.Then logs: "Hello, [name]!",
+//3.Then returns: "Greeting complete" 4.Call it with your name and print the returned value.
+
+// async function delayedGreeting(name) {
+//     await new Promise((resolve)=>{
+//         setTimeout(()=>{
+//             console.log("Hello",name,"!");
+//             resolve();
+//         },1000)
+//     });    
+//     return ("greetin complete");
+// }
+// delayedGreeting("maaz").then((name)=>{
+//     console.log(name);
+    
+// })
+
+//Write an async function loadUserProfile(userId) that simulates the following steps: 1.Waits 1 second and logs: "Fetching user with ID: [userId]"
+
+//Waits another 1 second and logs: "User data received"  2.Finally, returns "User profile loaded" 3.Then, call the function and log the returned value.
+async function loadUserProfile(userId){
+    await new Promise((resolve)=>{
+        setTimeout(() => {
+            console.log("Fetching user with ID:",userId);
+            resolve();            
+        }, 1000);
+    });
+
+    await new Promise((resolve)=>{
+        setTimeout(() => {
+            console.log("User data received");
+            resolve();
+        }, 1000);
+    });
+    return "User profile loaded"
+}
+loadUserProfile(1).then((messeage)=>{
+    console.log(messeage);    
 });
-}
-
-async function getAllDAta(){
-    console.log("Fetching data1...");    
-    await getData(1);
-    console.log("Fetching data2...");
-    await getData(2);
-    console.log("Fetching data3...");
-    await getData(3);
-}
-
-//IIFE :Immediately Invoked Function Experation .. we can use IIFE only one time.
-//IIFE is a funtion that is called immediately as soon as it is defined.
-
-(async function (){
-    console.log("Fetching data1...");    
-    await getData(1);
-    console.log("Fetching data2...");
-    await getData(2);
-    console.log("Fetching data3...");
-    await getData(3);
-})();
