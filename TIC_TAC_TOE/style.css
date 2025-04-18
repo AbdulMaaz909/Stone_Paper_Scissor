@@ -86,3 +86,21 @@ body{
 
 
 
+@media screen and (max-width: 850px) {
+    body {
+      background-color: #548687;
+      /* text-align: center; */
+    }
+    .container{
+        display: flex;
+        text-align: center;
+        /* flex-wrap: wrap; */
+        margin-right: 20rem;
+    }
+    .game{
+        /* margin-right: 20rem; */
+    }
+
+  }
+
+  /* //this will continue at home */

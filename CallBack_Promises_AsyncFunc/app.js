@@ -35,7 +35,7 @@
 //     console.log("hey how are you");
     
 // }
-// // console.log(calculator);// this is wrong syntax 
+//  console.log(calculator);// this is wrong syntax 
 // calculator();
 
 
@@ -86,8 +86,8 @@
 // function getData(dataId,getNextData){
     // return new Promise((resolve,reject) =>{
     //     setTimeout(()=>{
-    //         // console.log("data",dataId);
-    //         // resolve("sucess");
+    //         console.log("data",dataId);
+    //          resolve("sucess");
     //         reject("error")
 //             if(getNextData){
 //                 getNextData();
@@ -100,7 +100,7 @@
 //     return new Promise((resolve,reject) =>{
 //         console.log("I am a promise");
 //         resolve("succefull.")
-//         // reject("network Error.")
+//         reject("network Error.")
 //     });
 // };
 
@@ -341,22 +341,132 @@
 //Write an async function loadUserProfile(userId) that simulates the following steps: 1.Waits 1 second and logs: "Fetching user with ID: [userId]"
 
 //Waits another 1 second and logs: "User data received"  2.Finally, returns "User profile loaded" 3.Then, call the function and log the returned value.
-async function loadUserProfile(userId){
-    await new Promise((resolve)=>{
-        setTimeout(() => {
-            console.log("Fetching user with ID:",userId);
-            resolve();            
-        }, 1000);
-    });
+// async function loadUserProfile(userId){
+//     await new Promise((resolve)=>{
+//         setTimeout(() => {
+//             console.log("Fetching user with ID:",userId);
+//             resolve();            
+//         }, 1000);
+//     });
 
-    await new Promise((resolve)=>{
-        setTimeout(() => {
-            console.log("User data received");
-            resolve();
-        }, 1000);
-    });
-    return "User profile loaded"
+//     await new Promise((resolve)=>{
+//         setTimeout(() => {
+//             console.log("User data received");
+//             resolve();
+//         }, 1000);
+//     });
+//     return "User profile loaded"
+// }
+// loadUserProfile(1).then((messeage)=>{
+//     console.log(messeage);    
+// });
+
+
+// function sum(a,b){
+//     console.log(a+b);
+// }
+// function calculator(a,b,sumcallback){
+//     sumcallback(a,b);
+// }
+
+// calculator(1,2,(a,b)=>{
+//     console.log(a+b);    
+// });
+
+
+// Q1.Write a function that takes a number and a callback. The function should double the number and pass it to the callback.
+// function number(a){
+//     console.log(a);
+    
+// }
+// function double(a,doublenumber){
+//     doublenumber(a);
+// }
+// double(5,(a)=>{
+//     console.log(a+a);
+    
+// })
+
+//another way
+
+// function double(number,callback){
+//     const result=number*2;
+//     callback(result);
+// }
+
+// double(5,(result)=>{
+//     console.log("doubled is",result);
+    
+// });
+
+
+// function fetchdata(callback){
+//     setTimeout(() => {
+//         const data="data"  
+//         callback(data);     
+//     }, 1000);
+//     return "data"
+// }
+
+// fetchdata((result)=>{
+//     console.log("fetched",result);
+    
+// });
+
+
+// function fetcheddata(callback){
+//     setTimeout(()=>{
+//         const data="data";
+//         callback(data);
+//     },1000);
+//     // return "data";
+// }
+
+// fetcheddata((result)=>{
+//     console.log("fetched",result);
+    
+// })
+
+//call back function
+// const saycallback = (callback)=>{
+//     setTimeout(()=>{
+//         callback("fetch data");       
+//     },2000)
+// }
+
+// saycallback((Request)=>{
+//     console.log(Request);    
+// })
+
+//promises
+// function Hipromises(){
+//     return new Promise((resolve)=>{
+//         setTimeout(()=>{
+//             resolve("this is new promise");            
+//         },2000)
+//     })
+// }
+
+// Hipromises().then((message)=>{
+//     console.log(message);    
+// });
+
+
+// Asyn await function
+
+function Hiasync(){
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve("this is a new async funtion");
+        },2200);
+    })
 }
-loadUserProfile(1).then((messeage)=>{
-    console.log(messeage);    
-});
+
+async function run() {
+    const message = await Hiasync();
+    console.log(message);
+       
+}
+run();
+
+
