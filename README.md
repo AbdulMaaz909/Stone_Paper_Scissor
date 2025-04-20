@@ -1,8 +1,6 @@
 # ✂️ Stone Paper Scissors Game
 This is a simple Rock Paper Scissors game built using HTML, CSS, and JavaScript. The player competes against the computer by selecting one of the three options: rock, paper, or scissors. The computer randomly selects its move, and the winner is determined based on standard game rules. Scores are updated after each round.
 
-# 🔗 Live Demo 👉 https://stone-paper-mu.vercel.app/
-
 # 🚀 Features
 Interactive selection: rock, paper, or scissors
 
