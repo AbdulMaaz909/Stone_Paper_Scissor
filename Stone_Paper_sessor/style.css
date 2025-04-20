@@ -62,3 +62,28 @@ img{
     border-radius: 1rem;
 
 }
+
+@media only screen and (max-width:500px ) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+        background: 081b31;
+        text-align: center;        
+    }
+    .choices{
+        text-align: center;
+        /* margin: auto; */
+    }
+
+    img{
+        
+        width: 90%;
+    }
+    #msg{
+        font-size: 1.5rem;
+    }
+
+    
+}
