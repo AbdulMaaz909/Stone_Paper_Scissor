@@ -9,6 +9,7 @@ body{
     text-align: center;
     min-height: 100vh;
     background: #f4e4ba;
+    margin-top: 5rem; 
     
 }
 .container{
@@ -84,4 +85,18 @@ form button{
 form p{
     text-align: left;
     margin-top: 1rem;
+}
+
+
+@media   screen and (max-width:500px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        text-align: center;
+        justify-content: center;
+        padding: 1rem;
+        margin-top: 10rem;
+    }
 }
